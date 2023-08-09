@@ -1,0 +1,103 @@
+.itemList_wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+@media (max-width: 768px) {
+  .itemList_wrap {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+  }
+}
+.itemList_wrap .item_wrap {
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.itemList_wrap .item_wrap:nth-child(3n-2) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+@media (max-width: 768px) {
+  .itemList_wrap .item_wrap:nth-child(3n-2) {
+    grid-column: unset;
+    grid-row: unset;
+  }
+}
+.itemList_wrap .item_wrap:hover .item_text {
+  display: block;
+  text-align: center;
+}
+.itemList_wrap .item_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.itemList_wrap .item_wrap img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.itemList_wrap .item_wrap .item_text {
+  width: 100%;
+  padding: 10px 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.534);
+  transform: translate(-50%, 0);
+  color: white;
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.currentPhoto_wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.685);
+  display: flex;
+  justify-content: center;
+}
+.currentPhoto_wrap .currentPhoto {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.currentPhoto_wrap .currentPhoto img {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0px 0px 60px rgba(255, 255, 255, 0.5);
+}
+.currentPhoto_wrap .currentPhoto p {
+  text-align: center;
+  color: white;
+}
+.currentPhoto_wrap .closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  color: white;
+}/*# sourceMappingURL=main.css.map */
