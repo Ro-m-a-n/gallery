@@ -10,6 +10,7 @@ export const PhotosList = () => {
         key={index}
         onClick={() => setCurrentPhoto(item, index + 1)}
       >
+        
         <img src={item.urls.small_s3} />
         <div className="item_text">
           <p>{item.alt_description}</p>
